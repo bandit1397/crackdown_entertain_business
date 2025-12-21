@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>풍속업소 단속 시스템 개선판(업종 단독 표시)</title>
+
+<style>
+body{
+  font-family:"Apple SD Gothic Neo",sans-serif;
+  margin:20px;
+}
+.box{
+  border:1px solid #aaa;
+  padding:15px;
+  margin-bottom:20px;
+  border-radius:8px;
+}
+button{
+  width:100%;
+  padding:8px;
+  margin-top:5px;
+  font-size:15px;
+  cursor:pointer;
+}
+#industryButtons{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
+}
+
+#industryButtons button{
+  width:100%;
+}
+#punishList{
+  background:#f5f5f5;
+  padding:10px;
+  border-radius:6px;
+}
+.item{
+  border-bottom:1px solid #ccc;
+  padding:6px 0;
+}
+.hidden{display:none;}
+</style>
+</head>
+<body>
+
+<h2>풍속업소 단속 시스템</h2>
+
+<!-- 1단계 -->
+<div class="box">
+  <strong>1. 업종 선택</strong>
+  <div id="industryButtons">
+      <button onclick="selectIndustry('유흥주점', event)">유흥주점</button>
+      <button onclick="selectIndustry('단란주점', event)">단란주점</button>
+      <button onclick="selectIndustry('일반음식점', event)">일반음식점</button>
+      <button onclick="selectIndustry('노래연습장', event)">노래연습장</button>
+      <button onclick="selectIndustry('이용업', event)">이용업</button>
+      <button onclick="selectIndustry('숙박업', event)">숙박업</button>
+      <button onclick="selectIndustry('목욕장업', event)">목욕장업</button>
+      <button onclick="selectIndustry('게임제공업', event)">게임제공업</button>
+  </div>
+</div>
+
+
+<!-- 2단계 -->
+<div class="box">
+  <strong>2. 위반 유형 선택</strong>
+  <div id="violationsArea">업종을 먼저 선택하세요</div>
+</div>
+
+
+<!-- 3단계 -->
+<div class="box">
+  <strong>3. 처벌조항 / 유의사항</strong>
+  <div id="punishList">항목을 선택하세요</div>
+</div>
+
+
+
+<script>
+
+/********************
+★ 위반 데이터 DB
+********************/
+const data = {
+
+"유흥주점":[
+{ name:"호객행위", law:"경범죄처벌법", penalty:"10만원 이하 벌금", note:"현장영상 확보, 권유행위 확인" },
+{ name:"무허가 영업", law:"식품위생법 제44조", penalty:"3년 이하 징역/3천만원 이하 벌금", note:"영업신고증 원본 확인" },
+{ name:"미검진 종업원 고용", law:"후천성면역예방법", penalty:"300만원 이하 벌금", note:"위생검진표 원본확인" },
+{ name:"접객부 명부 미작성", law:"식품위생법 시행규칙", penalty:"영업정지 가능", note:"당일 명부 확인" }
+],
+
+"단란주점":[
+{ name:"무허가 영업", law:"식품위생법 제44조", penalty:"3년 이하 징역", note:"간판·관리책임자 확인" }
+]
+
+};
+
+
+/********************
+업종 클릭 → 선택 업종만 남기기
+********************/
+function selectIndustry(name,e){
+
+  // 선택된 버튼 강조
+  document.querySelectorAll("#industryButtons button")
+  .forEach(b=>b.classList.remove("active"));
+
+  e.target.classList.add("active");
+
+  // 선택 업종 외 버튼 숨김 처리
+  document.querySelectorAll("#industryButtons button").forEach(btn=>{
+      if(btn !== e.target){
+        btn.classList.add("hidden");
+      }
+  });
+
+  loadViolations(name);
+}
+
+
+/********************
+2. 위반목록 로딩
+********************/
+function loadViolations(industry){
+
+  let area = document.getElementById("violationsArea");
+  area.innerHTML = "";
+
+  if(data[industry] === undefined){
+    area.innerHTML = "자료 없음";
+    return;
+  }
+
+  data[industry].forEach(v=>{
+    let btn=document.createElement("button");
+    btn.innerText=v.name;
+    btn.onclick=function(){
+      showPunish(v);
+    };
+    area.appendChild(btn);
+  })
+}
+
+
+/********************
+3. 누적 처벌 내용
+********************/
+function showPunish(obj){
+
+  let box = document.getElementById("punishList");
+
+  box.innerHTML += `
+  <div class="item">
+    <strong>${obj.name}</strong><br>
+    법조문: ${obj.law}<br>
+    처벌: ${obj.penalty}<br>
+    유의사항: ${obj.note}
+  </div>
+  `;
+}
+
+</script>
+
+</body>
+</html>
