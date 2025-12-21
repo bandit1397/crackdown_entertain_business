@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>풍속업소 단속 시스템 개선판(업종 단독 표시)</title>
+<title>풍속업소 단속 시스템 개선판</title>
 
 <style>
 body{
@@ -27,10 +27,22 @@ button{
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 8px;
 }
-
-#industryButtons button{
-  width:100%;
+#violationsArea{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
 }
+
+button.activeIndustry{
+  background:#1e90ff;
+  color:white;
+}
+
+button.activeViolation{
+  background:#ff4d4d;
+  color:white;
+}
+
 #punishList{
   background:#f5f5f5;
   padding:10px;
@@ -41,6 +53,7 @@ button{
   padding:6px 0;
 }
 .hidden{display:none;}
+
 </style>
 </head>
 <body>
@@ -86,48 +99,46 @@ button{
 const data = {
 
 "유흥주점":[
-{ name:"호객행위", law:"경범죄처벌법", penalty:"10만원 이하 벌금", note:"현장영상 확보, 권유행위 확인" },
-{ name:"무허가 영업", law:"식품위생법 제44조", penalty:"3년 이하 징역/3천만원 이하 벌금", note:"영업신고증 원본 확인" },
-{ name:"미검진 종업원 고용", law:"후천성면역예방법", penalty:"300만원 이하 벌금", note:"위생검진표 원본확인" },
-{ name:"접객부 명부 미작성", law:"식품위생법 시행규칙", penalty:"영업정지 가능", note:"당일 명부 확인" }
+{ name:"호객행위", law:"경범죄처벌법", penalty:"10만원 이하 벌금", note:"현장영상 확보" },
+{ name:"무허가 영업", law:"식품위생법 제44조", penalty:"3년 이하 징역", note:"영업신고증 확인" },
+{ name:"미검진 종업원", law:"후천성면역예방법", penalty:"300만원 이하", note:"위생검진표 필요" },
+{ name:"접객부 명부 미작성", law:"식품위생법 시행규칙", penalty:"영업정지 가능", note:"명부 확인" }
 ],
 
 "단란주점":[
-{ name:"무허가 영업", law:"식품위생법 제44조", penalty:"3년 이하 징역", note:"간판·관리책임자 확인" }
+{ name:"무허가 영업", law:"식품위생법 제44조", penalty:"3년 이하 징역", note:"간판 확인" }
 ]
 
 };
 
 
 /********************
-업종 클릭 → 선택 업종만 남기기
+업종 클릭 → 다른 업종 숨기기
 ********************/
-function selectIndustry(name,e){
+function selectIndustry(name, e){
 
-  // 선택된 버튼 강조
   document.querySelectorAll("#industryButtons button")
-  .forEach(b=>b.classList.remove("active"));
-
-  e.target.classList.add("active");
-
-  // 선택 업종 외 버튼 숨김 처리
-  document.querySelectorAll("#industryButtons button").forEach(btn=>{
-      if(btn !== e.target){
-        btn.classList.add("hidden");
-      }
+  .forEach(b=>{
+    if(b !== e.target){ b.classList.add("hidden"); }
   });
+
+  e.target.classList.add("activeIndustry");
 
   loadViolations(name);
 }
 
 
+
 /********************
-2. 위반목록 로딩
+2. 위반목록 4개 가로표시
 ********************/
 function loadViolations(industry){
 
   let area = document.getElementById("violationsArea");
+  let punish = document.getElementById("punishList");
+
   area.innerHTML = "";
+  punish.innerHTML = "항목을 선택하세요";
 
   if(data[industry] === undefined){
     area.innerHTML = "자료 없음";
@@ -135,25 +146,60 @@ function loadViolations(industry){
   }
 
   data[industry].forEach(v=>{
-    let btn=document.createElement("button");
-    btn.innerText=v.name;
+
+    let btn = document.createElement("button");
+    btn.innerText = v.name;
+
+    btn.dataset.name = v.name;
+    btn.classList.add("vioBtn");
+
     btn.onclick=function(){
-      showPunish(v);
+      toggleViolation(btn, v);
     };
+
     area.appendChild(btn);
+
   })
 }
 
 
+
 /********************
-3. 누적 처벌 내용
+3. 위반 클릭 → 선택 표시/해제
 ********************/
-function showPunish(obj){
+function toggleViolation(btn, obj){
 
-  let box = document.getElementById("punishList");
+  let punishBox = document.getElementById("punishList");
+  let id = obj.name;
 
-  box.innerHTML += `
-  <div class="item">
+  // 이미 선택되어 있다면 해제
+  if(btn.classList.contains("activeViolation")){
+
+      btn.classList.remove("activeViolation");
+
+      // 해당 div 삭제
+      let target = document.getElementById("pun_"+id);
+      if(target){ target.remove(); }
+
+      // 모든 선택이 없으면 문구 복원
+      if(document.querySelectorAll(".activeViolation").length === 0){
+        punishBox.innerHTML = "항목을 선택하세요";
+      }
+
+      return;
+  }
+
+
+  // 신규 선택
+  btn.classList.add("activeViolation");
+
+  // 안내문 제거
+  if(punishBox.innerText === "항목을 선택하세요"){
+      punishBox.innerHTML = "";
+  }
+
+  punishBox.innerHTML += `
+  <div class="item" id="pun_${id}">
     <strong>${obj.name}</strong><br>
     법조문: ${obj.law}<br>
     처벌: ${obj.penalty}<br>
