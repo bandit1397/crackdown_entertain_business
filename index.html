@@ -54,7 +54,6 @@ button.activeViolation{
 }
 .hidden{display:none;}
 
-/**** depth 출력 전용 공통 처리 ****/
 .depth{
   display:block;
   margin-bottom:3px;
@@ -99,34 +98,42 @@ button.activeViolation{
 
 <script>
 
-/********************
-★ DB – depth 무제한 사용 가능
-********************/
 const data = {
 
 "유흥주점":[
 { 
-  name:"호객행위",  depth:0,
-  law:"경범죄처벌법", lawDepth:1,
-  penalty:"10만원 이하 벌금", penaltyDepth:2,
-  note:"현장영상 확보", noteDepth:3
+  name:{ text:"호객행위", depth:0 },
+  law:{ text:"경범죄처벌법", depth:1 },
+  penalty:{ text:"10만원 이하 벌금", depth:2 },
+
+  note:[
+    { text:"현장영상 확보", depth:3 },
+    { text:"항상 현장 보존", depth:4 }
+  ]
 },
 
 { 
-  name:"무허가 영업", depth:0,
-  law:"식품위생법 제44조", lawDepth:2,
-  penalty:"3년 이하 징역", penaltyDepth:3,
-  note:"영업신고증 확인", noteDepth:4
+  name:{ text:"무허가 영업", depth:0 },
+  law:{ text:"식품위생법 제44조", depth:1 },
+  penalty:{ text:"3년 이하 징역", depth:2 },
+
+  note:[
+    { text:"영업신고증 확인", depth:3 }
+  ]
 }
+
 ],
 
 
 "단란주점":[
-{
-  name:"무허가 영업", depth:0,
-  law:"식품위생법 제44조", lawDepth:1,
-  penalty:"3년 이하 징역", penaltyDepth:2,
-  note:"간판 확인", noteDepth:3
+{ 
+  name:{ text:"무허가 영업", depth:0 },
+  law:{ text:"식품위생법 제44조", depth:1 },
+  penalty:{ text:"3년 이하 징역", depth:2 },
+
+  note:[
+     { text:"간판 확인", depth:3 }
+  ]
 }
 ]
 
@@ -135,9 +142,7 @@ const data = {
 
 
 
-/********************
-업종 클릭 → 숨기기 + 토글 기능
-********************/
+
 function selectIndustry(name, e){
 
   if(e.target.classList.contains("activeIndustry")){
@@ -157,9 +162,6 @@ function selectIndustry(name, e){
 
 
 
-/********************
-업종 전체 초기화
-********************/
 function resetIndustries(){
   
   document.querySelectorAll("#industryButtons button").forEach(b=>{
@@ -173,9 +175,7 @@ function resetIndustries(){
 
 
 
-/********************
-2단계 – 위반유형 뿌리기
-********************/
+
 function loadViolations(industry){
 
   let area = document.getElementById("violationsArea");
@@ -192,9 +192,9 @@ function loadViolations(industry){
   data[industry].forEach(v=>{
 
     let btn = document.createElement("button");
-    btn.innerText = v.name;
+    btn.innerText = v.name.text;
 
-    btn.dataset.name = v.name;
+    btn.dataset.name = v.name.text;
     btn.classList.add("vioBtn");
 
     btn.onclick=function(){
@@ -208,13 +208,10 @@ function loadViolations(industry){
 
 
 
-/********************
-3단계 – depth 출력 / 무한 적용
-********************/
 function toggleViolation(btn, obj){
 
   let punishBox = document.getElementById("punishList");
-  let id = obj.name;
+  let id = obj.name.text;
 
   if(btn.classList.contains("activeViolation")){
 
@@ -236,29 +233,33 @@ function toggleViolation(btn, obj){
       punishBox.innerHTML = "";
   }
 
-  punishBox.innerHTML += `
-
+  let html = `
   <div class="item" id="pun_${id}">
 
-      <span class="depth" style="margin-left:${obj.depth*20}px;">
-        <strong>${obj.name}</strong>
+      <span class="depth" style="margin-left:${obj.name.depth*20}px;">
+        <strong>${obj.name.text}</strong>
       </span>
 
-      <span class="depth" style="margin-left:${obj.lawDepth*20}px;">
-        법조문: ${obj.law}
+      <span class="depth" style="margin-left:${obj.law.depth*20}px;">
+        법조문: ${obj.law.text}
       </span>
 
-      <span class="depth" style="margin-left:${obj.penaltyDepth*20}px;">
-        처벌: ${obj.penalty}
+      <span class="depth" style="margin-left:${obj.penalty.depth*20}px;">
+        처벌: ${obj.penalty.text}
       </span>
-
-      <span class="depth" style="margin-left:${obj.noteDepth*20}px;">
-        유의사항: ${obj.note}
-      </span>
-
-  </div>
-
   `;
+
+  obj.note.forEach(n=>{
+     html += `
+        <span class="depth" style="margin-left:${n.depth*20}px;">
+          유의사항: ${n.text}
+        </span>
+     `;
+  });
+
+  html += "</div>";
+
+  punishBox.innerHTML += html;
 }
 
 </script>
