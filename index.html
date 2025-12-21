@@ -101,17 +101,21 @@ button.activeViolation{
 const data = {
 
 "유흥주점":[
-{ 
-  name:{ text:"호객행위", depth:0 },
+{
+  name: { text:"호객행위", depth:0 },
+
   law:[
-    { text:"식품위생법 제44조 제1항 7호 ", depth:1 },
-    { text:"식품위생법 제44조 제1항 7호 ", depth:1 }
-     ],
-  penalty:{ text:"10만원 이하 벌금", depth:2 },
+    { text:"식품위생법 제44조 제1항 7호", depth:2 },
+    { text:"식품위생법 제44조 제2항 8호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"10만원 이하 벌금", depth:2 }
+  ],
 
   note:[
-    { text:"현장영상 확보", depth:3 },
-    { text:"항상 현장 보존", depth:4 }
+    { text:"현장영상 확보", depth:2 },
+    { text:"항상 현장 보존", depth:3 }
   ]
 },
 
@@ -236,26 +240,60 @@ function toggleViolation(btn, obj){
       punishBox.innerHTML = "";
   }
 
-  let html = `
-  <div class="item" id="pun_${id}">
+  let html = `<div class="item" id="pun_${id}">`;
 
+  // NAME
+  html += `
       <span class="depth" style="margin-left:${obj.name.depth*20}px;">
         <strong>${obj.name.text}</strong>
       </span>
+  `;
 
-      <span class="depth" style="margin-left:${obj.law.depth*20}px;">
-        법조문: ${obj.law.text}
+
+  // 법조문 상위 제목
+  html += `
+      <span class="depth" style="margin-left:${20}px;">
+        <strong>법조문</strong>
       </span>
+  `;
 
-      <span class="depth" style="margin-left:${obj.penalty.depth*20}px;">
-        처벌: ${obj.penalty.text}
+  // 법조문 반복 출력
+  obj.law.forEach(l=>{
+      html += `
+        <span class="depth" style="margin-left:${l.depth*20}px;">
+          ${l.text}
+        </span>
+      `;
+  });
+
+
+  // 처벌 상위
+  html += `
+      <span class="depth" style="margin-left:${20}px;">
+        <strong>처벌</strong>
+      </span>
+  `;
+
+  obj.penalty.forEach(p=>{
+      html += `
+        <span class="depth" style="margin-left:${p.depth*20}px;">
+          ${p.text}
+        </span>
+      `;
+  });
+
+
+  // 유의사항 상위
+  html += `
+      <span class="depth" style="margin-left:${20}px;">
+        <strong>유의사항</strong>
       </span>
   `;
 
   obj.note.forEach(n=>{
      html += `
         <span class="depth" style="margin-left:${n.depth*20}px;">
-          유의사항: ${n.text}
+          ${n.text}
         </span>
      `;
   });
@@ -264,6 +302,7 @@ function toggleViolation(btn, obj){
 
   punishBox.innerHTML += html;
 }
+
 
 </script>
 
