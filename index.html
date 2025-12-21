@@ -54,6 +54,12 @@ button.activeViolation{
 }
 .hidden{display:none;}
 
+/**** depth 출력 전용 공통 처리 ****/
+.depth{
+  display:block;
+  margin-bottom:3px;
+}
+
 </style>
 </head>
 <body>
@@ -94,80 +100,81 @@ button.activeViolation{
 <script>
 
 /********************
-★ DB
+★ DB – depth 무제한 사용 가능
 ********************/
 const data = {
 
 "유흥주점":[
-{ name:"호객행위", law:"경범죄처벌법", penalty:"10만원 이하 벌금", note:"현장영상 확보" },
-{ name:"무허가 영업", law:"식품위생법 제44조", penalty:"3년 이하 징역", note:"영업신고증 확인" },
-{ name:"미검진 종업원", law:"후천성면역예방법", penalty:"300만원 이하", note:"위생검진표 필요" },
-{ name:"접객부 명부 미작성", law:"식품위생법 시행규칙", penalty:"영업정지 가능", note:"명부 확인" }
+{ 
+  name:"호객행위",  depth:0,
+  law:"경범죄처벌법", lawDepth:1,
+  penalty:"10만원 이하 벌금", penaltyDepth:2,
+  note:"현장영상 확보", noteDepth:3
+},
+
+{ 
+  name:"무허가 영업", depth:0,
+  law:"식품위생법 제44조", lawDepth:2,
+  penalty:"3년 이하 징역", penaltyDepth:3,
+  note:"영업신고증 확인", noteDepth:4
+}
 ],
 
+
 "단란주점":[
-{ name:"무허가 영업", law:"식품위생법 제44조", penalty:"3년 이하 징역", note:"간판 확인" }
+{
+  name:"무허가 영업", depth:0,
+  law:"식품위생법 제44조", lawDepth:1,
+  penalty:"3년 이하 징역", penaltyDepth:2,
+  note:"간판 확인", noteDepth:3
+}
 ]
 
 };
 
 
 
-/********************
-업종 토글 기능 추가
-********************/
-let selectedIndustry = null;
 
+/********************
+업종 클릭 → 숨기기 + 토글 기능
+********************/
 function selectIndustry(name, e){
 
-  let allBtns = document.querySelectorAll("#industryButtons button");
-  let area = document.getElementById("violationsArea");
-  let punish = document.getElementById("punishList");
-
-
-  /** 선택 해제 **/
-  if(selectedIndustry === name){
-
-      selectedIndustry = null;
-
-      allBtns.forEach(b=>{
-        b.classList.remove("hidden");
-        b.classList.remove("activeIndustry");
-      });
-
-      area.innerHTML = "업종을 먼저 선택하세요";
-      punish.innerHTML = "항목을 선택하세요";
-
+  if(e.target.classList.contains("activeIndustry")){
+      resetIndustries();
       return;
   }
 
-
-  /** 업종 선택 **/
-  selectedIndustry = name;
-
-  allBtns.forEach(btn=>{
-
-      if(btn.innerText === name){
-          btn.classList.add("activeIndustry");
-          btn.classList.remove("hidden");
-      }else{
-          btn.classList.add("hidden");
-          btn.classList.remove("activeIndustry");
-      }
-
+  document.querySelectorAll("#industryButtons button")
+  .forEach(b=>{
+    if(b !== e.target){ b.classList.add("hidden"); }
   });
 
-  loadViolations(name);
+  e.target.classList.add("activeIndustry");
 
+  loadViolations(name);
 }
 
 
 
+/********************
+업종 전체 초기화
+********************/
+function resetIndustries(){
+  
+  document.querySelectorAll("#industryButtons button").forEach(b=>{
+      b.classList.remove("hidden");
+      b.classList.remove("activeIndustry");
+  });
+
+  document.getElementById("violationsArea").innerHTML = "업종을 먼저 선택하세요";
+  document.getElementById("punishList").innerHTML = "항목을 선택하세요";
+}
 
 
 
 /********************
-2. 위반목록 출력 그대로 유지
+2단계 – 위반유형 뿌리기
 ********************/
 function loadViolations(industry){
 
@@ -177,7 +184,7 @@ function loadViolations(industry){
   area.innerHTML = "";
   punish.innerHTML = "항목을 선택하세요";
 
-  if(data[industry] === undefined){
+  if(!data[industry]){
     area.innerHTML = "자료 없음";
     return;
   }
@@ -195,7 +202,6 @@ function loadViolations(industry){
     };
 
     area.appendChild(btn);
-
   })
 }
 
@@ -203,7 +209,7 @@ function loadViolations(industry){
 
 
 /********************
-3. 위반 항목 토글 그대로 유지
+3단계 – depth 출력 / 무한 적용
 ********************/
 function toggleViolation(btn, obj){
 
@@ -215,31 +221,44 @@ function toggleViolation(btn, obj){
       btn.classList.remove("activeViolation");
 
       let target = document.getElementById("pun_"+id);
-      if(target){ target.remove(); }
+      if(target) target.remove();
 
       if(document.querySelectorAll(".activeViolation").length === 0){
-        punishBox.innerHTML = "항목을 선택하세요";
+        punishBox.innerHTML="항목을 선택하세요";
       }
 
       return;
   }
 
-
   btn.classList.add("activeViolation");
 
-  if(punishBox.innerText === "항목을 선택하세요"){
+  if(punishBox.innerText==="항목을 선택하세요"){
       punishBox.innerHTML = "";
   }
 
   punishBox.innerHTML += `
-  <div class="item" id="pun_${id}">
-    <strong>${obj.name}</strong><br>
-    법조문: ${obj.law}<br>
-    처벌: ${obj.penalty}<br>
-    유의사항: ${obj.note}
-  </div>
-  `;
 
+  <div class="item" id="pun_${id}">
+
+      <span class="depth" style="margin-left:${obj.depth*20}px;">
+        <strong>${obj.name}</strong>
+      </span>
+
+      <span class="depth" style="margin-left:${obj.lawDepth*20}px;">
+        법조문: ${obj.law}
+      </span>
+
+      <span class="depth" style="margin-left:${obj.penaltyDepth*20}px;">
+        처벌: ${obj.penalty}
+      </span>
+
+      <span class="depth" style="margin-left:${obj.noteDepth*20}px;">
+        유의사항: ${obj.note}
+      </span>
+
+  </div>
+
+  `;
 }
 
 </script>
