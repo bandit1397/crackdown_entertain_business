@@ -94,7 +94,7 @@ button.activeViolation{
 <script>
 
 /********************
-★ 위반 데이터 DB
+★ DB
 ********************/
 const data = {
 
@@ -112,25 +112,62 @@ const data = {
 };
 
 
+
 /********************
-업종 클릭 → 다른 업종 숨기기
+업종 토글 기능 추가
 ********************/
+let selectedIndustry = null;
+
 function selectIndustry(name, e){
 
-  document.querySelectorAll("#industryButtons button")
-  .forEach(b=>{
-    if(b !== e.target){ b.classList.add("hidden"); }
+  let allBtns = document.querySelectorAll("#industryButtons button");
+  let area = document.getElementById("violationsArea");
+  let punish = document.getElementById("punishList");
+
+
+  /** 선택 해제 **/
+  if(selectedIndustry === name){
+
+      selectedIndustry = null;
+
+      allBtns.forEach(b=>{
+        b.classList.remove("hidden");
+        b.classList.remove("activeIndustry");
+      });
+
+      area.innerHTML = "업종을 먼저 선택하세요";
+      punish.innerHTML = "항목을 선택하세요";
+
+      return;
+  }
+
+
+  /** 업종 선택 **/
+  selectedIndustry = name;
+
+  allBtns.forEach(btn=>{
+
+      if(btn.innerText === name){
+          btn.classList.add("activeIndustry");
+          btn.classList.remove("hidden");
+      }else{
+          btn.classList.add("hidden");
+          btn.classList.remove("activeIndustry");
+      }
+
   });
 
-  e.target.classList.add("activeIndustry");
-
   loadViolations(name);
+
 }
 
 
 
+
+
+
 /********************
-2. 위반목록 4개 가로표시
+2. 위반목록 출력 그대로 유지
 ********************/
 function loadViolations(industry){
 
@@ -164,24 +201,22 @@ function loadViolations(industry){
 
 
 
+
 /********************
-3. 위반 클릭 → 선택 표시/해제
+3. 위반 항목 토글 그대로 유지
 ********************/
 function toggleViolation(btn, obj){
 
   let punishBox = document.getElementById("punishList");
   let id = obj.name;
 
-  // 이미 선택되어 있다면 해제
   if(btn.classList.contains("activeViolation")){
 
       btn.classList.remove("activeViolation");
 
-      // 해당 div 삭제
       let target = document.getElementById("pun_"+id);
       if(target){ target.remove(); }
 
-      // 모든 선택이 없으면 문구 복원
       if(document.querySelectorAll(".activeViolation").length === 0){
         punishBox.innerHTML = "항목을 선택하세요";
       }
@@ -190,10 +225,8 @@ function toggleViolation(btn, obj){
   }
 
 
-  // 신규 선택
   btn.classList.add("activeViolation");
 
-  // 안내문 제거
   if(punishBox.innerText === "항목을 선택하세요"){
       punishBox.innerHTML = "";
   }
@@ -206,6 +239,7 @@ function toggleViolation(btn, obj){
     유의사항: ${obj.note}
   </div>
   `;
+
 }
 
 </script>
