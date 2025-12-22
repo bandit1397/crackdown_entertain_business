@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>풍속업소 단속 시스템 개선판</title>
 
 <style>
@@ -59,11 +60,72 @@ button.activeViolation{
   margin-bottom:3px;
 }
 
+
+
+/* ============================
+   📱 스마트폰 대응 반응형
+============================ */
+@media(max-width:900px){
+
+  body{
+    margin:10px;
+    font-size:15px;
+  }
+
+  h2{
+    font-size:20px;
+  }
+
+  #industryButtons,
+  #violationsArea{
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap:6px;
+  }
+
+  button{
+    padding:12px;
+    font-size:14px;
+  }
+
+  .box{
+    padding:12px;
+  }
+
+  #punishList{
+    font-size:14px;
+  }
+}
+
+
+/* ============================
+   📱 작은 모바일 해상도 대응
+============================ */
+@media(max-width:520px){
+
+  #industryButtons,
+  #violationsArea{
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  button{
+    font-size:15px;
+    padding:14px;
+  }
+
+  .depth{
+    font-size:14px;
+  }
+
+  h2{
+    font-size:19px;
+  }
+}
+
 </style>
 </head>
 <body>
 
-<h2>풍속업소 단속 시스템</h2>
+<h2>풍속업소 단속 메뉴얼</h2>
 
 <!-- 1단계 -->
 <div class="box">
@@ -191,22 +253,18 @@ function toggleViolation(btn, obj){
 
   let html = `<div class="item" id="pun_${id}">`;
 
-  // NAME
   html += `
       <span class="depth" style="margin-left:${obj.name.depth*20}px;">
         <strong>${obj.name.text}</strong>
       </span>
   `;
 
-
-  // 법조문 상위 제목
   html += `
       <span class="depth" style="margin-left:${20}px;">
         <strong>법조문</strong>
       </span>
   `;
 
-  // 법조문 반복 출력
   obj.law.forEach(l=>{
       html += `
         <span class="depth" style="margin-left:${l.depth*20}px;">
@@ -216,7 +274,6 @@ function toggleViolation(btn, obj){
   });
 
 
-  // 처벌 상위
   html += `
       <span class="depth" style="margin-left:${20}px;">
         <strong>처벌</strong>
@@ -232,7 +289,6 @@ function toggleViolation(btn, obj){
   });
 
 
-  // 유의사항 상위
   html += `
       <span class="depth" style="margin-left:${20}px;">
         <strong>유의사항</strong>
@@ -251,7 +307,6 @@ function toggleViolation(btn, obj){
 
   punishBox.innerHTML += html;
 }
-
 
 </script>
 
