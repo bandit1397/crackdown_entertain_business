@@ -4,14 +4,14 @@ const data = {
 {
   name: { text:"호객행위", depth:0 },
 
-  law:[
-    { text:"식품위생법 제44조 제1항 7호", depth:2 },
-    { text:"식품위생법 제97조 6호", depth:2 }
-  ],
-
   penalty:[
     { text:"3년 이하 징역 또는 3천만원 이하 벌금", depth:2 },
     { text:"15일/1월/3월 행정처분", depth:2 }
+  ],
+
+  law:[
+    { text:"식품위생법 제44조 제1항 7호", depth:2 },
+    { text:"식품위생법 제97조 6호", depth:2 }
   ],
 
   note:[
