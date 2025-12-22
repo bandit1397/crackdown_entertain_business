@@ -261,21 +261,6 @@ function toggleViolation(btn, obj){
 
   html += `
       <span class="depth" style="margin-left:${20}px;">
-        <strong>법조문</strong>
-      </span>
-  `;
-
-  obj.law.forEach(l=>{
-      html += `
-        <span class="depth" style="margin-left:${l.depth*20}px;">
-          ${l.text}
-        </span>
-      `;
-  });
-
-
-  html += `
-      <span class="depth" style="margin-left:${20}px;">
         <strong>처벌</strong>
       </span>
   `;
@@ -284,6 +269,20 @@ function toggleViolation(btn, obj){
       html += `
         <span class="depth" style="margin-left:${p.depth*20}px;">
           ${p.text}
+        </span>
+      `;
+  });
+
+  html += `
+      <span class="depth" style="margin-left:${20}px;">
+        <strong>법조문</strong>
+      </span>
+  `;
+
+  obj.law.forEach(l=>{
+      html += `
+        <span class="depth" style="margin-left:${l.depth*20}px;">
+          ${l.text}
         </span>
       `;
   });
