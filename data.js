@@ -685,6 +685,66 @@ const data = {
     { text:"", depth:2 }
        ]
 }
+],
+
+"목욕장업":[
+{
+  name: { text:"청소년 출입시간 금지", depth:0 },
+
+  law:[
+    { text:"공중위생법 제4조 제7항", depth:2 },
+    { text:"공중위생관리법 시행규칙 제7조(별표 4)", depth:2 },
+    { text:"공중위생법 제20조 제3항 제3호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"6개월 이하 징역 또는 5백만 이하 벌금", depth:2 },
+    { text:"경고/10일/1월/폐쇄", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"영업정지중 영업", depth:0 },
+
+  law:[
+    { text:"공중위생관리법 제11조 제1항", depth:2 },
+    { text:"공중위생관리법 제20조 제2항 제2호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"1년 이하 징역 또는 1천만원 이하 벌금", depth:2 },
+    { text:"폐쇄", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"미신고 영업", depth:0 },
+
+  law:[
+    { text:"공중위생관리법 제3조 제1항", depth:2 },
+    { text:"공중위생관리법 제20조 제2항 제1호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"1년 이하 징역 또는 1천만 이하 벌금", depth:2 },
+    { text:"폐쇄", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+}
 ]
 
 };
