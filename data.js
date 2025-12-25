@@ -692,9 +692,9 @@ const data = {
   name: { text:"청소년 출입시간 금지", depth:0 },
 
   law:[
-    { text:"공중위생법 제4조 제7항", depth:2 },
+    { text:"공중위생관리법 제4조 제7항", depth:2 },
     { text:"공중위생관리법 시행규칙 제7조(별표 4)", depth:2 },
-    { text:"공중위생법 제20조 제3항 제3호", depth:2 }
+    { text:"공중위생관리법 제20조 제3항 제3호", depth:2 }
   ],
 
   penalty:[
