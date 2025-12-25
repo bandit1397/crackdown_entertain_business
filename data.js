@@ -41,7 +41,7 @@ const data = {
 },
 
 {
-  name: { text:"영업허가증 미보관", depth:0 },
+  name: { text:"영업허가증 미게시", depth:0 },
 
   law:[
     { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
