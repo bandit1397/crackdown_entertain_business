@@ -81,9 +81,6 @@ const data = {
 }
 ],
 
-
-  
-
 "단란주점":[
 {
   name: { text:"무허가 유흥주점 영업", depth:0 },
