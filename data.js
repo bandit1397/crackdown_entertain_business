@@ -79,12 +79,10 @@ const data = {
     { text:"", depth:2 }
   ]
 }
-
+],
 
 
   
-],
-
 
 "단란주점":[
 { 
@@ -95,7 +93,129 @@ const data = {
   note:[
      { text:"간판 확인", depth:3 }
   ]
+},
+
+{
+  name: { text:"영업정지 중 영업", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
+    { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
+    { text:"식품위생법 제101조 제4항 3호", depth:2 },
+    { text:"식품위생법시행규칙 제2항 2호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"100만원 이하 과태료", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"청소년 종업원 고용", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
+    { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
+    { text:"식품위생법 제101조 제4항 3호", depth:2 },
+    { text:"식품위생법시행규칙 제2항 2호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"100만원 이하 과태료", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"청소년 접대부 고용", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
+    { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
+    { text:"식품위생법 제101조 제4항 3호", depth:2 },
+    { text:"식품위생법시행규칙 제2항 2호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"100만원 이하 과태료", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"청소년 업소출입", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
+    { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
+    { text:"식품위생법 제101조 제4항 3호", depth:2 },
+    { text:"식품위생법시행규칙 제2항 2호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"100만원 이하 과태료", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"성인 유흥종사자 고용", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
+    { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
+    { text:"식품위생법 제101조 제4항 3호", depth:2 },
+    { text:"식품위생법시행규칙 제2항 2호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"100만원 이하 과태료", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"취업한 유흥종사자", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
+    { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
+    { text:"식품위생법 제101조 제4항 3호", depth:2 },
+    { text:"식품위생법시행규칙 제2항 2호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"100만원 이하 과태료", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
 }
+
+  
 ]
 
 };
