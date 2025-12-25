@@ -148,16 +148,17 @@ const data = {
   law:[
     { text:"청소년보호법 제30조 제2호", depth:2 },
     { text:"청소년보호법 제56조", depth:2 }
-    
+      ],
+  
   penalty:[
     { text:"10년 이하 징역", depth:2 },
     { text:"취소 폐쇄", depth:2 }
-  ],
+         ],
 
   note:[
     { text:"", depth:2 },
     { text:"", depth:2 }
-  ]
+       ]
 },
 
 
@@ -165,20 +166,19 @@ const data = {
   name: { text:"청소년 업소출입", depth:0 },
 
   law:[
-    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
-    { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
-    { text:"식품위생법 제101조 제4항 3호", depth:2 },
-    { text:"식품위생법시행규칙 제2항 2호", depth:2 }
-  ],
+    { text:"청소년보호법 제29조 제2항", depth:2 },
+    { text:"청소년보호법 제59조 제8호", depth:2 }
+      ],
 
   penalty:[
-    { text:"100만원 이하 과태료", depth:2 }
-  ],
+    { text:"2년 이하 징역 또는 2천만원 이하 벌금", depth:2 },
+    { text:"1월/2월/3월", depth:2 }
+          ],
 
   note:[
     { text:"", depth:2 },
     { text:"", depth:2 }
-  ]
+      ]
 },
 
 {
