@@ -161,6 +161,19 @@ button.activeViolation{
 
 <script src="data.js"></script>
 <script>
+  
+function makeLawUrl(text){
+  const lawMatch = text.match(/^(.+?)\s제/);
+  const articleMatch = text.match(/제\d+조/);
+
+  if(!lawMatch || !articleMatch) return null;
+
+  const lawName = lawMatch[1].trim();
+  const article = articleMatch[0];
+
+  return `https://law.go.kr/법령/${encodeURIComponent(lawName)}/${article}`;
+}
+
    
 function selectIndustry(name, e){
 
@@ -281,12 +294,26 @@ function toggleViolation(btn, obj){
   `;
 
   obj.law.forEach(l=>{
+    const url = makeLawUrl(l.text);
+
+    if(url){
+      html += `
+        <span class="depth" style="margin-left:${l.depth*20}px;">
+          🔗 <a href="${url}" target="_blank"
+               style="color:#1e90ff;font-weight:600;text-decoration:underline;">
+            ${l.text}
+          </a>
+        </span>
+      `;
+    } else {
       html += `
         <span class="depth" style="margin-left:${l.depth*20}px;">
           ${l.text}
         </span>
       `;
+    }
   });
+
 
 
   html += `
