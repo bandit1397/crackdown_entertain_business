@@ -429,6 +429,126 @@ const data = {
     { text:"", depth:2 }
        ]
 }
+],
+
+
+"이용업":[
+{
+  name: { text:"미신고 영업", depth:0 },
+
+  law:[
+    { text:"공중위생관리법 제3조 제1항", depth:2 },
+    { text:"공중위생관리법 제20조 제1항", depth:2 }
+  ],
+
+  penalty:[
+    { text:"2년 이하 징역 또는 2천만 이하 벌금", depth:2 },
+    { text:"폐쇄", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"영업정지 중 영업", depth:0 },
+
+  law:[
+    { text:"공중위생관리법 제11조 제1항", depth:2 },
+    { text:"공중위생관리법 제20조 제2항 제2호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"1년 이하 징역 또는 1천만원 이하 벌금", depth:2 },
+    { text:"폐쇄", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"성매매", depth:0 },
+
+  law:[
+    { text:"성매매알선 등 행위의 처벌에 관한 법률 제4조", depth:2 },
+    { text:"성매매알선 등 행위의 처벌에 관한 법률 제19조 제2항", depth:2 }
+  ],
+
+  penalty:[
+    { text:"7년 이하 징역 또는 7천만 이하 벌금", depth:2 },
+    { text:"2월/3월/폐쇄", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"음란행위", depth:0 },
+
+  law:[
+    { text:"풍속영업의 규제에 관한 법률 제3조 제2호", depth:2 },
+    { text:"풍속영업의 규제에 관한 법률 제10조 제2항", depth:2 }
+      ],
+  
+  penalty:[
+    { text:"3년 이하 징역 또는 2천만 이하 벌금", depth:2 },
+    { text:"2월/3월/폐쇄", depth:2 }
+         ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+       ]
+},
+
+
+{
+  name: { text:"도박 및 사행행위 등", depth:0 },
+
+  law:[
+    { text:"풍속영업의 규제에 관한 법률 제3조 제4호", depth:2 },
+    { text:"풍속영업의 규제에 관한 법률 제10조 제2항", depth:2 }
+      ],
+
+  penalty:[
+    { text:"3년 이하 징역 또는 2천만원 이하 벌금", depth:2 },
+    { text:"1월/2월/폐쇄", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"영리목적 무자격 안마", depth:0 },
+
+  law:[
+    { text:"의료법 제82조 제1항", depth:2 },
+    { text:"의료법 제88조 제4호", depth:2 },
+    { text:"의료법 제91조", depth:2 }
+      ],
+
+  penalty:[
+    { text:"3년 이하 징역 또는 3천만 이하 벌금", depth:2 },
+    { text:"1월/2월/폐쇄", depth:2 }
+          ],
+
+  note:[
+    { text:"양벌규정(무자격 안마사 및 업주처벌)", depth:2 },
+    { text:"", depth:2 }
+       ]
+}
+
 ]
 
 };
