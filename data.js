@@ -85,13 +85,22 @@ const data = {
   
 
 "단란주점":[
-{ 
-  name:{ text:"무허가 영업", depth:0 },
-  law:{ text:"식품위생법 제44조", depth:1 },
-  penalty:{ text:"3년 이하 징역", depth:2 },
+{
+  name: { text:"무허가 유흥주점 영업", depth:0 },
+
+  law:[
+    { text:"식품위생법 제47조 제1항", depth:2 },
+    { text:"식품위생법 제94조 제1항 3호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"10년 이하 징역 또는 1억 이하 벌금", depth:2 },
+    { text:"폐쇄", depth:2 }
+  ],
 
   note:[
-     { text:"간판 확인", depth:3 }
+    { text:"", depth:2 },
+    { text:"", depth:2 }
   ]
 },
 
@@ -99,14 +108,13 @@ const data = {
   name: { text:"영업정지 중 영업", depth:0 },
 
   law:[
-    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
-    { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
-    { text:"식품위생법 제101조 제4항 3호", depth:2 },
-    { text:"식품위생법시행규칙 제2항 2호", depth:2 }
+    { text:"식품위생법 제75조 제1항", depth:2 },
+    { text:"식품위생법 제95조 제5호", depth:2 }
   ],
 
   penalty:[
-    { text:"100만원 이하 과태료", depth:2 }
+    { text:"5년 이하 징역 또는 5천만 이하 벌금", depth:2 },
+    { text:"취소 폐쇄", depth:2 }
   ],
 
   note:[
@@ -119,14 +127,13 @@ const data = {
   name: { text:"청소년 종업원 고용", depth:0 },
 
   law:[
-    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
-    { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
-    { text:"식품위생법 제101조 제4항 3호", depth:2 },
-    { text:"식품위생법시행규칙 제2항 2호", depth:2 }
+    { text:"청소년보호법 제29조 제1항", depth:2 },
+    { text:"청소년보호법 제58조 제4호", depth:2 }
   ],
 
   penalty:[
-    { text:"100만원 이하 과태료", depth:2 }
+    { text:"3년 이하 징역 또는 3천만 이하 벌금", depth:2 },
+    { text:"3월/취소 폐쇄", depth:2 }
   ],
 
   note:[
@@ -139,14 +146,12 @@ const data = {
   name: { text:"청소년 접대부 고용", depth:0 },
 
   law:[
-    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
-    { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
-    { text:"식품위생법 제101조 제4항 3호", depth:2 },
-    { text:"식품위생법시행규칙 제2항 2호", depth:2 }
-  ],
-
+    { text:"청소년보호법 제30조 제2호", depth:2 },
+    { text:"청소년보호법 제56조", depth:2 }
+    
   penalty:[
-    { text:"100만원 이하 과태료", depth:2 }
+    { text:"10년 이하 징역", depth:2 },
+    { text:"취소 폐쇄", depth:2 }
   ],
 
   note:[
@@ -154,6 +159,7 @@ const data = {
     { text:"", depth:2 }
   ]
 },
+
 
 {
   name: { text:"청소년 업소출입", depth:0 },
