@@ -745,6 +745,115 @@ const data = {
     { text:"", depth:2 }
   ]
 }
+],
+
+"당구장·스크린골프장·크레인":[
+{
+  name: { text:"미신고 영업", depth:0 },
+
+  law:[
+    { text:"체육시설의 설치ㆍ이용에 관한 법률 제20조 제1항", depth:2 },
+    { text:"체육시설의 설치ㆍ이용에 관한 법률 제38조 제2항 제1호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"1년 이하 징역 또는 1천만 이하 벌금", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"체리마스터 영업", depth:0 },
+
+  law:[
+    { text:"사행행위 등 규제 및 처벌 특례법 제30조 제1항 제1호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"5년 이하 징역 또는 5천만원 이하 벌금", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"체리마스터 진열 보관", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제32조 제1항 제1호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제44조 제1항 제2호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"5년 이하 징역 또는 5천만 이하 벌금", depth:2 }
+  ],
+
+  note:[
+    { text:"영업 불발견", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"크레인(건물외부설치)", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제26조 제1항", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제45조 제2호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"2년 이하 징역 또는 2천만 이하 벌금", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"크레인(청소년유해물경품취급)", depth:0 },
+
+  law:[
+    { text:"청소년보호법 제28조 제1항", depth:2 },
+    { text:"청소년보호법 제3호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"3년 이하 징역 또는 3천만 이하 벌금", depth:2 }
+  ],
+
+  note:[
+    { text:"인형뽑기", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"무허가유원지시설업", depth:0 },
+
+  law:[
+    { text:"관광진흥법 제5조 제2항", depth:2 },
+    { text:"관광진흥법 제84조 제2호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"1년 이하 징역 또는 1천만 이하 벌금", depth:2 }
+  ],
+
+  note:[
+    { text:"미니사격장", depth:2 },
+    { text:"", depth:2 }
+  ]
+}
 ]
 
 };
