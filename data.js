@@ -230,6 +230,45 @@ const data = {
     { text:"청소년 유흥종사자 처벌 확인 요", depth:2 },
     { text:"", depth:2 }
        ]
+},
+
+{
+  name: { text:"호객행위", depth:0 },
+
+  penalty:[
+    { text:"3년 이하 징역 또는 3천만원 이하 벌금", depth:2 },
+    { text:"15일/1월/3월 행정처분", depth:2 }
+  ],
+
+  law:[
+    { text:"식품위생법 제44조 제1항 제7호", depth:2 },
+    { text:"식품위생법 제97조 제6호", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"영업허가증 미보관", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제1항 8호", depth:2 },
+    { text:"식품위생법 시행규칙 제57조(별표17 7-자)", depth:2 },
+    { text:"식품위생법 제101조 제4항 3호", depth:2 },
+    { text:"식품위생법시행규칙 제101조 제2항 제1호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"100만원 이하 과태료", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
 }
 ],
 
