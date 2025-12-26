@@ -1,5 +1,254 @@
 const data = {
 
+"게임제공업":[
+{
+  name: { text:"환전(업주)", depth:0 },
+
+  penalty:[
+    { text:"5년 이하 징역 또는 5천만원 이하 벌금", depth:2 },
+    { text:"취소 폐쇄", depth:2 }
+          ],
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제28조 제1항 제2호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제44조 제1항 제1호", depth:2 }
+      ],
+
+  note:[
+    { text:"사행행위", depth:2 },
+    { text:"업주를 게산법 제32조 제1항 제7호 적용할 경우 행정처분 안될 수 있음", depth:2 }
+      ]
+},
+  
+{
+  name: { text:"환전(환전상)", depth:0 },
+
+  penalty:[
+    { text:"5년 이하 징역 또는 5천만 이하 벌금", depth:2 }
+         ],
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제32조 제1항 제7호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제44조 제1항 제2호", depth:2 }
+     ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"무허가/무등록 영업", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제26조 제1항", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제45조 제2호", depth:2 }
+      ],
+
+  penalty:[
+    { text:"2년 이하 징역 또는 2천만 이하 벌금", depth:2 },
+    { text:"폐쇄", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"영업정지중 영업", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제35조 제2항", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제45조 제9호", depth:2 }
+     ],
+
+  penalty:[
+    { text:"2년 이하 징역 또는 2천만 이하 벌금", depth:2 },
+    { text:"취소 폐쇄", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"개변조", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제32조 제2항 제2호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제45조 제4호", depth:2 }
+     ],
+
+  penalty:[
+    { text:"2년 이하 징역 또는 2천만 이하 벌금", depth:2 },
+    { text:"1월/3월/취소", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"등급미필게임제공", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제32조 제1항 제1호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제44조 제1항 제2호", depth:2 }
+     ],
+
+  penalty:[
+    { text:"5년 이하 징역 또는 5천만 이하 벌금", depth:2 },
+    { text:"1월/3월/취소", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"경품지급 취급(사행행위)", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제28조 제1항 제3호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제44조 제1항 제1의2호", depth:2 }
+     ],
+
+  penalty:[
+    { text:"5년 이하 징역 또는 5천만 이하 벌금", depth:2 },
+    { text:"취소 폐쇄", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"경품지급 취급(개변조)", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제32조 제1항 제2호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제45조 제4호", depth:2 }
+     ],
+
+  penalty:[
+    { text:"2년 이하 징역 또는 2천만 이하 벌금", depth:2 },
+    { text:"1월/3월/취소", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"청소년게임장(청불게임제공)", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제28조 제1항 제4호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제45조 제3의2호", depth:2 }
+     ],
+
+  penalty:[
+    { text:"2년 이하 징역 또는 2천만 이하 벌금", depth:2 },
+    { text:"경고/10일/1월/취소", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"등급구분위반 게임물 제공/실행(게임장)", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제21조 제2항", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제32조 제1항 제3호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제46조 제3호", depth:2 }
+     ],
+
+  penalty:[
+    { text:"1년 이하 징역 또는 1천만 이하 벌금", depth:2 },
+    { text:"1월/3월/취소", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"등급구분위반 게임물 제공/실행(PC방)", depth:0 },
+
+  law:[
+    { text:"?", depth:2 },
+    { text:"?", depth:2 }
+     ],
+
+  penalty:[
+    { text:"?", depth:2 },
+    { text:"?", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"청소년출입", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제28조 제1항 제7호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제46조 제2호", depth:2 }
+     ],
+
+  penalty:[
+    { text:"1년 이하 징역 또는 1천만 이하 벌금", depth:2 },
+    { text:"10일/1월/3월/6월", depth:2 }
+          ],
+
+  note:[
+    { text:"22시~09시", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"음란사행차단프로그램 미설치 등", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제28조 제1항 제6호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 제48조 제2항 제5호", depth:2 }
+     ],
+
+  penalty:[
+    { text:"1천만 이하 과태료", depth:2 },
+    { text:"경고/10일/1월/2월", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+}
+],
+
 "유흥주점":[
 {
   name: { text:"건강검진 미검 유흥접객원 고용", depth:0 },
