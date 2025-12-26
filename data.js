@@ -2,6 +2,23 @@ const data = {
 
 "유흥주점":[
 {
+  name: { text:"건강검진 미검 유흥접객원 고용", depth:0 },
+
+  penalty:[
+    { text:"2백만원 이하 벌금", depth:2 }
+          ],
+
+  law:[
+    { text:"감염병의 예방 및 관리에 관한 법률 제19조", depth:2 },
+    { text:"감염병의 예방 및 관리에 관한 법률 제81조 제9호", depth:2 }
+      ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+{
   name: { text:"호객행위", depth:0 },
 
   penalty:[
@@ -10,8 +27,8 @@ const data = {
   ],
 
   law:[
-    { text:"식품위생법 제44조 제1항 7호", depth:2 },
-    { text:"식품위생법 제97조 6호", depth:2 }
+    { text:"식품위생법 제44조 제1항 제7호", depth:2 },
+    { text:"식품위생법 제97조 제6호", depth:2 }
   ],
 
   note:[
@@ -24,10 +41,10 @@ const data = {
   name: { text:"유흥 접객원 명부 미비치", depth:0 },
 
   law:[
-    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
+    { text:"식품위생법 제44조 제1항 8호", depth:2 },
     { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
     { text:"식품위생법 제101조 제4항 제3호", depth:2 },
-    { text:"식품위생법 시행규칙 제2항 제2호", depth:2 }
+    { text:"식품위생법 시행규칙 제101조 제2항 제2호", depth:2 }
   ],
 
   penalty:[
@@ -41,13 +58,13 @@ const data = {
 },
 
 {
-  name: { text:"영업허가증 미게시", depth:0 },
+  name: { text:"영업허가증 미보관", depth:0 },
 
   law:[
-    { text:"식품위생법 제44조 제1항 8호(총리령)", depth:2 },
+    { text:"식품위생법 제44조 제1항 8호", depth:2 },
     { text:"식품위생법 시행규칙 제57조(별표17 7-자)", depth:2 },
     { text:"식품위생법 제101조 제4항 3호", depth:2 },
-    { text:"식품위생법시행규칙 제2항 1호", depth:2 }
+    { text:"식품위생법시행규칙 제101조 제2항 제1호", depth:2 }
   ],
 
   penalty:[
