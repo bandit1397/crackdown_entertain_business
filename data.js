@@ -16,25 +16,26 @@ const data = {
   note:[
     { text:"", depth:2 },
     { text:"", depth:2 }
-  ]
+      ]
 },
+  
 {
   name: { text:"호객행위", depth:0 },
 
   penalty:[
     { text:"3년 이하 징역 또는 3천만원 이하 벌금", depth:2 },
     { text:"15일/1월/3월 행정처분", depth:2 }
-  ],
+         ],
 
   law:[
     { text:"식품위생법 제44조 제1항 제7호", depth:2 },
     { text:"식품위생법 제97조 제6호", depth:2 }
-  ],
+     ],
 
   note:[
     { text:"", depth:2 },
     { text:"", depth:2 }
-  ]
+      ]
 },
 
 {
@@ -45,16 +46,16 @@ const data = {
     { text:"식품위생법 시행규칙 제57조(별표17 7-파)", depth:2 },
     { text:"식품위생법 제101조 제4항 제3호", depth:2 },
     { text:"식품위생법 시행규칙 제101조 제2항 제2호", depth:2 }
-  ],
+      ],
 
   penalty:[
     { text:"100만원 이하 과태료", depth:2 }
-  ],
+          ],
 
   note:[
     { text:"", depth:2 },
     { text:"", depth:2 }
-  ]
+      ]
 },
 
 {
@@ -65,36 +66,16 @@ const data = {
     { text:"식품위생법 시행규칙 제57조(별표17 7-자)", depth:2 },
     { text:"식품위생법 제101조 제4항 3호", depth:2 },
     { text:"식품위생법시행규칙 제101조 제2항 제1호", depth:2 }
-  ],
+     ],
 
   penalty:[
     { text:"100만원 이하 과태료", depth:2 }
-  ],
+          ],
 
   note:[
     { text:"", depth:2 },
     { text:"", depth:2 }
-  ]
-},
-
-{
-  name: { text:"건강진단 미검 유흥접객원 고용한 업주", depth:0 },
-
-  law:[
-    { text:"감염병의 예방 및 관리에 관한 법률 제19조", depth:2 },
-    { text:"성매개감염병 및 후천성면역결핍증 건강진단규칙 제3조(별표-3)", depth:2 },
-    { text:"식품위생법 제101조 제4항 3호", depth:2 },
-    { text:"식품위생법시행규칙 제2항 1호", depth:2 }
-  ],
-
-  penalty:[
-    { text:"100만원 이하 과태료", depth:2 }
-  ],
-
-  note:[
-    { text:"", depth:2 },
-    { text:"", depth:2 }
-  ]
+      ]
 }
 ],
 
@@ -174,7 +155,6 @@ const data = {
     { text:"", depth:2 }
        ]
 },
-
 
 {
   name: { text:"청소년 업소출입", depth:0 },
