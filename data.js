@@ -228,7 +228,85 @@ const data = {
     { text:"", depth:2 },
     { text:"", depth:2 }
       ]
-}
+},
+
+{
+  name: { text:"영업시간(청소년 출입시간 제외)", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제28조 제1항 제7호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 시행령 제16조 제1호", depth:2 }
+     ],
+
+  penalty:[
+    { text:"처벌규정 없음", depth:2 },
+    { text:"10일/1월/3월/6월", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"게임물의 버튼 등 입력장치 자동 조작", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제28조 제1항 제8호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 시행령 17조(별표2-9)", depth:2 }
+     ],
+
+  penalty:[
+    { text:"처벌규정 없음", depth:2 },
+    { text:"1월/3월/취소", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"1명이 동시에 2대 이상의 게임물 이용", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제28조 제1항 제8호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 시행령 17조(별표2-2)", depth:2 }
+     ],
+
+  penalty:[
+    { text:"처벌규정 없음", depth:2 },
+    { text:"경고/5일/10일/1월", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+{
+  name: { text:"점수보관", depth:0 },
+
+  law:[
+    { text:"게임산업진흥에 관한 법률 제28조 제1항 제8호", depth:2 },
+    { text:"게임산업진흥에 관한 법률 시행령 17조(별표2-7)", depth:2 }
+     ],
+
+  penalty:[
+    { text:"처벌규정 없음", depth:2 },
+    { text:"경고/5일/10일/1월", depth:2 }
+          ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+      ]
+},
+
+  
 ],
 
 "유흥주점":[
