@@ -1147,17 +1147,17 @@ const data = {
   law:[
     { text:"식품위생법 제37조 제4항", depth:2 },
     { text:"식품위생법 제97조 제1호", depth:2 }
-  ],
+     ],
 
   penalty:[
     { text:"3년 이하 징역 또는 3천만 이하 벌금", depth:2 },
     { text:"폐쇄", depth:2 }
-  ],
+          ],
 
   note:[
     { text:"", depth:2 },
     { text:"", depth:2 }
-  ]
+      ]
 },
 
 {
@@ -1323,7 +1323,6 @@ const data = {
   penalty:[
     { text:"3년 이하 징역 또는 3천만 이하 벌금", depth:2 },
     { text:"시정/7일/15일", depth:2 }
-    { text:"", depth:2 }
   ],
 
   note:[
