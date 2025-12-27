@@ -1138,6 +1138,199 @@ const data = {
     { text:"", depth:2 }
   ]
 }
+],
+
+"일반음식점":[
+{
+  name: { text:"미신고 영업", depth:0 },
+
+  law:[
+    { text:"식품위생법 제37조 제4항", depth:2 },
+    { text:"식품위생법 제97조 제1호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"3년 이하 징역 또는 3천만 이하 벌금", depth:2 },
+    { text:"폐쇄", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"영업정지중 영업", depth:0 },
+
+  law:[
+    { text:"식품위생법 제75조 제1항", depth:2 },
+    { text:"식품위생법 제97조 제7호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"3년 이하 징역 또는 3천만 이하 벌금", depth:2 },
+    { text:"취소 폐쇄", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"접대부 고용(업주)", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제3항", depth:2 },
+    { text:"식품위생법 제98조 제1호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"1년 이하 징역 또는 1천만 이하 벌금", depth:2 },
+    { text:"1월/2월/취소 폐쇄", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"접대부(동석작배)", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제3항", depth:2 },
+    { text:"식품위생법 제98조 제1호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"1년 이하 징역 또는 1천만 이하 벌금", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"청소년 고용", depth:0 },
+
+  law:[
+    { text:"청소년보호법 제29조 제1항", depth:2 },
+    { text:"청소년보호법 제58조 제4호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"3년 이하 징역 또는 3천만 이하 벌금", depth:2 }
+  ],
+
+  note:[
+    { text:"청소년은 연 19세미만", depth:2 },
+    { text:"호프, 소주방에서 고용", depth:2 }
+  ]
+},
+
+{
+  name: { text:"청소년 주류판매", depth:0 },
+
+  law:[
+    { text:"청소년보호법 제28조 제1항 ", depth:2 },
+    { text:"청소년보호법 제59조 제6호", depth:2 }
+  ],
+
+  penalty:[
+    { text:"2년 이하 징역 또는 2천만 이하 벌금", depth:2 }
+  ],
+
+  note:[
+    { text:"연19세미만 청소년", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"특수조명, 음향시설 갖추고 무대에서 손님에게 춤을 추게 허용", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제1항 ", depth:2 },
+    { text:"식품위생법 제97조 제6호 ", depth:2 },
+    { text:"식품위생법 시행규칙 제57조(별표 17-7 타 7) ", depth:2 }
+  ],
+
+  penalty:[
+    { text:"3년 이하 징역 또는 3천만 이하 벌금", depth:2 },
+    { text:"시정/1월/2월", depth:2 }
+  ],
+
+  note:[
+    { text:"일명 감성주점", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"음향 및 반주시설을 갖추고 손님 노래 허용", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제1항 ", depth:2 },
+    { text:"식품위생법 제97조 제6호 ", depth:2 },
+    { text:"식품위생법 시행규칙 제57조(별표 17-7 타 2) ", depth:2 }
+  ],
+
+  penalty:[
+    { text:"3년 이하 징역 또는 3천만 이하 벌금", depth:2 },
+    { text:"1월/2월/취소", depth:2 }
+  ],
+
+  note:[
+    { text:"7080", depth:2 },
+    { text:"연회석을 보유한 일반음식점에서 회갑연, 칠손연 등 가정의 의례로 행하는 경우 예외", depth:2 }
+  ]
+},
+
+{
+  name: { text:"영업신고증 미보관", depth:0 },
+
+  law:[
+    { text:"식품위생법 제44조 제1항 ", depth:2 },
+    { text:"식품위생법 제101조 제4항 제3호 ", depth:2 },
+    { text:"식품위생법 시행규칙 제101조 제2항 제1호(별표 17-제7호자목) ", depth:2 }
+  ],
+
+  penalty:[
+    { text:"100만원 이하 과태료", depth:2 },
+    { text:"", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+},
+
+{
+  name: { text:"1개월이내 영업승계미필", depth:0 },
+
+  law:[
+    { text:"식품위생법 제39조 제3항 ", depth:2 },
+    { text:"식품위생법 제97조 제1호 ", depth:2 }
+  ],
+
+  penalty:[
+    { text:"3년 이하 징역 또는 3천만 이하 벌금", depth:2 },
+    { text:"시정/7일/15일", depth:2 }
+    { text:"", depth:2 }
+  ],
+
+  note:[
+    { text:"", depth:2 },
+    { text:"", depth:2 }
+  ]
+}
 ]
 
 };
