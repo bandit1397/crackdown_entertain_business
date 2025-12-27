@@ -121,6 +121,12 @@ button.activeViolation{
   }
 }
 
+.law-text{
+  letter-spacing:-0.04em;   /* 자간 좁힘 (핵심) */
+  word-break:keep-all;      /* 단어 단위 줄바꿈 방지 */
+  white-space:normal;
+}
+
 </style>
 </head>
 <body>
@@ -300,7 +306,9 @@ function toggleViolation(btn, obj){
       html += `
         <span class="depth" style="margin-left:${l.depth*20}px;">
            <a href="${url}" target="_blank"
-               style="color:#1e90ff;font-weight:600;text-decoration:underline;">
+             class="law-text"
+             style="color:#1e90ff;font-weight:600;text-decoration:underline;">
+
             ${l.text}
           </a>
         </span>
