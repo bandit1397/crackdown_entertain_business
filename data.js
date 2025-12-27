@@ -134,25 +134,6 @@ const data = {
 },
 
 {
-  name: { text:"경품지급 취급(개변조)", depth:0 },
-
-  law:[
-    { text:"게임산업진흥에 관한 법률 제32조 제1항 제2호", depth:2 },
-    { text:"게임산업진흥에 관한 법률 제45조 제4호", depth:2 }
-     ],
-
-  penalty:[
-    { text:"2년 이하 징역 또는 2천만 이하 벌금", depth:2 },
-    { text:"1월/3월/취소", depth:2 }
-          ],
-
-  note:[
-    { text:"", depth:2 },
-    { text:"", depth:2 }
-      ]
-},
-
-{
   name: { text:"청소년게임장(청불게임제공)", depth:0 },
 
   law:[
