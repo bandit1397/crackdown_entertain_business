@@ -690,7 +690,7 @@ const data = {
           ],
 
   note:[
-    { text:"접대부 남녀 불문", depth:2 },
+    { text:"", depth:2 },
     { text:"", depth:2 }
        ]
 },
